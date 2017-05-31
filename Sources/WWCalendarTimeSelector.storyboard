@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="guU-fh-eOY">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="guU-fh-eOY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,23 +25,36 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZx-N2-yKn">
                                 <rect key="frame" x="20" y="20" width="280" height="184"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmz-PS-Tfb">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmz-PS-Tfb">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cRz-DT-zDj">
-                                                <rect key="frame" x="8" y="0.0" width="264" height="28"/>
+                                                <rect key="frame" x="46.5" y="4.5" width="187" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKv-W6-vgN">
+                                                <rect key="frame" x="230" y="0.0" width="50" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Jba-sI-Xlk"/>
+                                                </constraints>
+                                                <state key="normal" title="  X  ">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="close" destination="guU-fh-eOY" eventType="touchUpInside" id="1Ee-OR-B5t"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="cRz-DT-zDj" firstAttribute="leading" relation="lessThanOrEqual" secondItem="cmz-PS-Tfb" secondAttribute="leading" priority="750" constant="8" id="2Lq-OK-o4B"/>
-                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cRz-DT-zDj" secondAttribute="trailing" priority="750" constant="8" id="L9z-v8-hXI"/>
-                                            <constraint firstItem="cRz-DT-zDj" firstAttribute="top" secondItem="cmz-PS-Tfb" secondAttribute="top" priority="750" id="OPb-0g-kCm"/>
+                                            <constraint firstAttribute="trailing" secondItem="AKv-W6-vgN" secondAttribute="trailing" id="0YH-Kv-pXn"/>
+                                            <constraint firstAttribute="bottom" secondItem="AKv-W6-vgN" secondAttribute="bottom" id="BYG-bD-46m"/>
+                                            <constraint firstItem="cRz-DT-zDj" firstAttribute="centerX" secondItem="cmz-PS-Tfb" secondAttribute="centerX" id="Rhu-lG-tfk"/>
                                             <constraint firstAttribute="height" priority="999" constant="28" id="VOY-qT-L2z"/>
-                                            <constraint firstItem="cRz-DT-zDj" firstAttribute="leading" secondItem="cmz-PS-Tfb" secondAttribute="leading" priority="250" id="nAF-Kr-vrx"/>
-                                            <constraint firstAttribute="bottom" secondItem="cRz-DT-zDj" secondAttribute="bottom" priority="750" id="qJ8-gL-Iht"/>
+                                            <constraint firstItem="cRz-DT-zDj" firstAttribute="centerY" secondItem="cmz-PS-Tfb" secondAttribute="centerY" id="VTZ-Pb-lyd"/>
+                                            <constraint firstItem="AKv-W6-vgN" firstAttribute="top" secondItem="cmz-PS-Tfb" secondAttribute="top" id="YHQ-bO-rpo"/>
+                                            <constraint firstItem="cRz-DT-zDj" firstAttribute="width" secondItem="cmz-PS-Tfb" secondAttribute="width" multiplier="2/3" id="xQg-Ea-Rdm"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQK-y4-UhM">
@@ -514,6 +528,7 @@
                         <outlet property="calendarTable" destination="Qdk-04-U5s" id="J2k-Q9-W78"/>
                         <outlet property="cancelButton" destination="uaO-9T-OmA" id="Nfa-Tv-E62"/>
                         <outlet property="clockView" destination="Sdw-Mc-C2Q" id="AnO-Bu-31q"/>
+                        <outlet property="closeButton" destination="AKv-W6-vgN" id="N0p-VH-CwK"/>
                         <outlet property="dateLabel" destination="Yrt-vu-FRn" id="J1Z-iR-uqs"/>
                         <outlet property="dayLabel" destination="cRz-DT-zDj" id="WBC-zT-MZf"/>
                         <outlet property="dayViewHeightConstraint" destination="VOY-qT-L2z" id="5oj-qs-ThL"/>
